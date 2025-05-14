@@ -13,6 +13,8 @@
             background-attachment: fixed;
             color: white;
             position: relative;
+            margin: 0;
+            padding-top: 70px;
         }
 
         body::before {
@@ -26,9 +28,21 @@
             z-index: -1;
         }
 
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
         .overlay {
             position: relative;
             z-index: 1;
+        }
+
+        .dark-mode {
+            background-color: #222 !important;
+            color: #fff !important;
         }
     </style>
 </head>
@@ -37,7 +51,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Explore and Enroll</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -48,7 +62,7 @@
                     <li class="nav-item"><a class="nav-link" href="enrollment website.html" target="_blank">Enroll</a></li>
                 </ul>
                 <form class="d-flex ms-auto">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control me-2" type="search" placeholder="Search">
                     <button class="btn btn-outline-light" type="submit">Search</button>
                 </form>
             </div>
@@ -61,71 +75,130 @@
     </div>
 
     <div id="courses" class="container overlay my-5">
-        <h2 class="text-center mb-4">Available Courses</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card bg-dark text-white">
-                    <div class="card-body">
-                        <h5 class="card-title">Humanities</h5>
-                        <p class="card-text">Explore history, philosophy, industrial design, and more!</p>
-                    </div>
+    <h2 class="text-center mb-4">Available Courses</h2>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Humanities</h5>
+                    <p class="card-text">Explore philosophy, literature, linguistics, and art history.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card bg-dark text-white">
-                    <div class="card-body">
-                        <h5 class="card-title">Social Sciences</h5>
-                        <p class="card-text">Delve into human behavior, anthropology, and societal studies.</p>
-                    </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Social Sciences</h5>
+                    <p class="card-text">Study psychology, sociology, anthropology, and political science.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card bg-dark text-white">
-                    <div class="card-body">
-                        <h5 class="card-title">Natural Sciences</h5>
-                        <p class="card-text">Dive into biology, chemistry, physics, and environmental science.</p>
-                    </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Natural Sciences</h5>
+                    <p class="card-text">Dive into biology, chemistry, physics, and environmental science.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card bg-dark text-white">
-                    <div class="card-body">
-                        <h5 class="card-title">Business</h5>
-                        <p class="card-text">Explore marketing, management, finance, and entrepreneurship.</p>
-                    </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Business</h5>
+                    <p class="card-text">Master marketing, finance, entrepreneurship, and management.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card bg-dark text-white">
-                    <div class="card-body">
-                        <h5 class="card-title">Technology</h5>
-                        <p class="card-text">Master programming, AI, cybersecurity, and data science.</p>
-                    </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Technology</h5>
+                    <p class="card-text">Learn programming, AI, cybersecurity, cloud computing, and data science.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card bg-dark text-white">
-                    <div class="card-body">
-                        <h5 class="card-title">Arts</h5>
-                        <p class="card-text">Unleash your creativity with painting, music, dance, and theater.</p>
-                    </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Arts</h5>
+                    <p class="card-text">Unleash creativity through painting, music, dance, theater, and graphic design.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Health Sciences</h5>
+                    <p class="card-text">Explore nursing, pharmacy, sports sciences, physical therapy, and medical research.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Engineering</h5>
+                    <p class="card-text">Learn civil, mechanical, electrical, aerospace, and software engineering.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Education</h5>
+                    <p class="card-text">Train in teaching methodologies, child psychology, curriculum design, and educational leadership.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Law</h5>
+                    <p class="card-text">Understand criminal law, corporate law, international law, and legal ethics.</p>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div id="about" class="container overlay my-5">
-        <h2 class="text-center mb-4">About Us</h2>
-        <p>Welcome to Explore and Enroll, your go-to platform for finding and enrolling in courses tailored to your personal and professional growth. 
-            At Explore and Enroll, we strive to foster an environment of innovation, creativity, and inclusivity. 
-            Our team is dedicated to curating a diverse range of courses, empowering learners to embrace their passions and achieve their goals. 
-            Whether you seek academic excellence, skill development, or personal enrichment, we are here to guide you every step of the way. 
-            Join us in building a future filled with opportunities and success!</p>
-    </div>
+
+<div id="about" class="container overlay my-5">
+    <h2 class="text-center mb-4">About Us</h2>
+    <p>At <strong>Explore and Enroll</strong>, we believe that education is the foundation of progress, innovation, and personal growth. 
+       Our mission is to make high-quality learning accessible to everyone, regardless of location, background, or career aspirations.</p>
+    
+    <p>We have carefully designed a platform that offers a diverse range of courses covering subjects from "Humanities and Social Sciences" 
+       to "Business, Technology, Health Sciences, Engineering, and beyond". Whether you're a student looking for academic enrichment, a 
+       professional seeking career advancement, or an individual pursuing lifelong learning, we provide a seamless experience tailored to your needs.</p>
+
+    <h3>🌍 Our Vision</h3>
+    <p>We envision a world where education transcends barriers and empowers individuals to shape their own future. 
+       By leveraging cutting-edge technology and a global network of educators, we strive to create an inclusive learning space for everyone.</p>
+
+    <h3>🚀 What Sets Us Apart?</h3>
+    <ul>
+        <li><strong>Diverse Learning Paths:</strong> A vast selection of courses across multiple fields, ensuring relevance to a wide audience.</li>
+        <li><strong>Expert Instructors:</strong> Our courses are led by industry professionals, scholars, and educators dedicated to sharing knowledge.</li>
+        <li><strong>Flexible Learning:</strong> Access courses anytime, anywhere-whether you're a busy professional, a full-time student, or an independent learner.</li>
+        <li><strong>Career-Focused Education:</strong> Our curriculum is designed to equip learners with "practical skills" applicable in real-world settings.</li>
+        <li><strong>Interactive & Engaging Learning:</strong> From video lectures to live discussions, we ensure dynamic engagement.</li>
+    </ul>
+
+    <h3>📈 Our Impact</h3>
+    <p>Since our inception, we have helped thousands of learners enhance their skills, transition into new careers, and explore their intellectual curiosity. 
+       Our community-driven approach has fostered collaboration, growth, and lifelong connections among students and educators alike.</p>
+
+    <h3>🎓 Join Us</h3>
+    <p>At "Explore and Enroll", we don't just offer education-we offer transformation. Whether you're looking to upskill, pursue a degree, 
+       or simply expand your knowledge, we are here to support you on your journey. Take the first step towards unlocking endless opportunities.</p>
+
+    <p><strong>Let's shape the future of learning, together.</strong></p>
+</div>
+8
+
 
     <div id="contact" class="container overlay my-5">
         <h2 class="text-center mb-4">Contact Us</h2>
-        <form>
+        <form id="contactForm">
             <div class="mb-3"><label for="name" class="form-label">Full Name</label><input type="text" class="form-control" id="name" placeholder="Enter your name"></div>
             <div class="mb-3"><label for="email" class="form-label">Email</label><input type="email" class="form-control" id="email" placeholder="Enter your email"></div>
             <div class="mb-3"><label for="message" class="form-label">Message</label><textarea class="form-control" id="message" rows="4" placeholder="Enter your message"></textarea></div>
@@ -138,5 +211,17 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Thank you for contacting us!");
+            this.reset();
+        });
+
+        document.getElementById("toggleDarkMode").addEventListener("click", function() {
+            document.body.classList.toggle("dark-mode");
+        });
+    </script>
+
 </body>
 </html>
